@@ -1,43 +1,43 @@
 		//no need set if you use the first culture added in CulturePack
 		 Culture.set("pt-BR");
 		 
-		 var date = Date.now();
+		 var date = Date.now();              
 		 var time = Time.now();
 		 var number = 12345.543;
 		 var smallNumber = 0.2456;
 
 		 //Format samples
-		 console.log(time.format("HH:mm:ss.fff"));
-		 console.log(time.format());
-		 console.log(time.format("time"));
-		 console.log(time.format("stime"));
+		 console.log(time.format("HH:mm:ss.fff"));                       //19:56:01.405
+		 console.log(time.format());                                     //19:56:01
+		 console.log(time.format("time"));                               //19:56:01
+		 console.log(time.format("stime"));                              //19:56
 		 
-		 console.log(date.format("dd/MM/yyyy HH:mm:ss.fff tt `GMT`zzz"));
-		 console.log(date.format());
-		 console.log(date.format("date"));
-		 console.log(date.format("sdate"));
-		 console.log(date.format("time"));
-		 console.log(date.format("stime"));
+		 console.log(date.format("dd/MM/yyyy HH:mm:ss.fff tt `GMT`zzz"));//30/10/2016 19:56:01.405 PM GMT-02:00
+		 console.log(date.format());                                     //30/10/2016 19:56:01
+		 console.log(date.format("date"));                               //30/10/2016
+		 console.log(date.format("sdate"));                              //30/10
+		 console.log(date.format("time"));                               //19:56:01
+		 console.log(date.format("stime"));                              //19:56
 		 
-		 console.log(number.format());
-		 console.log(number.format("C"));
-		 console.log(number.format("C3"));
-		 console.log(number.format("N"));
-		 console.log(number.format("N3"));
-		 console.log(number.format("F"));
-		 console.log(number.format("F3"));
-		 console.log(parseInt(number).format("X"));
-		 console.log(parseInt(number).format("X5"));
-		 console.log(number.format("E"));
-		 console.log(number.format("E10"));
-		 console.log(number.format("D"));
-		 console.log(number.format("D6"));
-		 console.log(smallNumber.format("P"));
-		 console.log(smallNumber.format("P3"));
-		 console.log(smallNumber.format("00.00"));
-		 console.log(smallNumber.format("0,00"));
-		 console.log(number.format("0 0000.00"));
-		 console.log((05).format("00"));
+		 console.log(number.format());                                   //12345,54
+		 console.log(number.format("C"));                                //R$ 12.345,54
+		 console.log(number.format("C3"));                               //R$ 12.345,543
+		 console.log(number.format("N"));                                //12.345,54
+		 console.log(number.format("N3"));                               //12.345,543
+		 console.log(number.format("F"));                                //12345,54
+		 console.log(number.format("F3"));                               //12345,543
+		 console.log(parseInt(number).format("X"));                      //3039
+		 console.log(parseInt(number).format("X5"));                     //03039
+		 console.log(number.format("E"));                                //1.2345543E+4
+		 console.log(number.format("E10"));                              //1.2345543000E+4
+		 console.log(number.format("D"));                                //12345
+		 console.log(number.format("D6"));                               //012345
+		 console.log(smallNumber.format("P"));                           //24,56%
+		 console.log(smallNumber.format("P3"));                          //24,560%
+		 console.log(smallNumber.format("00.00"));                       //00.25
+		 console.log(smallNumber.format("0,00"));                        //0,25
+		 console.log(number.format("0 0000.00"));                        //1 2345.54
+		 console.log((05).format("00"));                                 //05
 		 
 		 //Parse Samples
 		 console.log(parseTime("15:35:42") + "");
