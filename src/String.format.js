@@ -36,6 +36,7 @@ String.format = function (text, values, culture) {
 Object.defineProperty(String.prototype, 'format', {
 	enumerable : false,
 	value : function format(format, culture) {
-		return String.format(this, format, culture);
+		Array.prototype.unshift.call(arguments, this);
+		return String.format.apply(null, arguments);
 	}
 });
