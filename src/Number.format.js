@@ -106,21 +106,21 @@ require("./Culture.js");
 			numberSeparators = Object.keys(uniques);
 			numberSeparatorsCount = numberSeparators.length;
 		}
-		if (separatorsCount != numberSeparatorsCount)
+		if (separatorsCount < numberSeparatorsCount)
 			return NaN;
 
-		for (var i = 0; i < separatorsCount; i++) {
-			if (separators[i] != numberSeparators[i])
+		for (var i = 0; i < numberSeparatorsCount; i++) {
+			if (separators.indexOf(numberSeparators[i]) == -1)
 				return NaN;
 		}
 
-		if (separatorsCount == 0) {
+		if (numberSeparatorsCount == 0) {
 			return parseFloat(numberTxt);
-		} else if (separatorsCount == 1) {
-			return parseFloat(numberTxt.split(separators[0]).join("."));
-		} else if (separatorsCount == 2) {
-			return parseFloat(numberTxt.split(separators[0]).join("")
-				.split(separators[1]).join("."));
+		} else if (numberSeparatorsCount == 1) {
+			return parseFloat(numberTxt.split(numberSeparators[0]).join("."));
+		} else if (numberSeparatorsCount == 2) {
+			return parseFloat(numberTxt.split(numberSeparators[0]).join("")
+				.split(numberSeparators[1]).join("."));
 		}
 	}
 	Number.format = function (n, format, culture) {
