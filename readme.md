@@ -73,3 +73,18 @@
 		 console.log(parseNumber("0,25", "0,00"));
 		 console.log(parseNumber("1 2345.54", "0 0000.00"));
 		 console.log(parseNumber("05", "00"));
+		 
+		 //String format samples
+		 console.log("{0} custa {1:C} em {2:date} às {2:stime}".format("Camiseta", number, date));
+		 console.log(String.format("{0} custa {1:C} em {2:date} às {2:stime}",["Camiseta", number, date], "en-US"));
+		 
+		 //Cultures currently available 
+		 //pt-BR
+		 //pt-PT
+		 //de-DE
+		 //fr-FR
+		 //it-IT
+		 //es-ES
+		 //en-US
+		 //en-CA
+		 //en-GB
