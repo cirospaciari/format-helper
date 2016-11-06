@@ -1,1 +1,1 @@
-browserify main.js -o > bin/format.js
+browserify main.js -o > dist/format.js

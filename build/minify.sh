@@ -1,1 +1,1 @@
-browserify main.js -o | uglifyjs > bin/format.min.js
+browserify main.js -o | uglifyjs > dist/format.min.js
