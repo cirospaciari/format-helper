@@ -1,3 +1,4 @@
-browserify main.js -o > bin/format.js
-browserify main.js -o | uglifyjs > bin/format.min.js
-pause
+chmod a+x  build/normal.sh
+chmod a+x  build/minify.sh
+sh build/normal.sh
+sh build/minify.sh
