@@ -1,9 +1,9 @@
 (function (global) {
 
 	var Culture = {
-		cultures : {},
-		currentCulture : null,
-		add : function (culture) {
+		cultures: {},
+		currentCulture: null,
+		add: function (culture) {
 
 			var countryCode = culture.name.toLowerCase();
 			var languageCode = countryCode.split("-")[0];
@@ -17,13 +17,13 @@
 			if (!this.currentCulture)
 				this.currentCulture = culture.name;
 		},
-		set : function (cultureName) {
+		set: function (cultureName) {
 			this.currentCulture = cultureName.toLowerCase();
 		},
-		get : function (cultureName) {
+		get: function (cultureName) {
 			return this.cultures[cultureName.toLowerCase()];
 		},
-		current : function () {
+		current: function () {
 			return Culture.get(this.currentCulture);
 		}
 	};

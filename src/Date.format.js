@@ -30,101 +30,102 @@ require("./Time.format.js");
 		format = format || culture.dateTimeFormat;
 
 		format = replaceIfNotInBraces(format, "dddd", function () {
-				return "`" + culture.days[date.getDay()] + "`";
-			});
+			return "`" + culture.days[date.getDay()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "ddd", function () {
-				return "`" + culture.shortDays[date.getDay()] + "`";
-			});
+			return "`" + culture.shortDays[date.getDay()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "dd", function () {
-				return padLeft(2, date.getDate());
-			});
+			return padLeft(2, date.getDate());
+		});
 		format = replaceIfNotInBraces(format, "d", function () {
-				return date.getDate();
-			});
+			return date.getDate();
+		});
 		format = replaceIfNotInBraces(format, "MMMM", function () {
-				return "`" + culture.months[date.getMonth()] + "`";
-			});
+			return "`" + culture.months[date.getMonth()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "MMM", function () {
-				return "`" + culture.shortMonths[date.getMonth()] + "`";
-			});
+			return "`" + culture.shortMonths[date.getMonth()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "MM", function () {
-				return padLeft(2, date.getMonth() + 1);
-			});
+			return padLeft(2, date.getMonth() + 1);
+		});
 		format = replaceIfNotInBraces(format, "M", function () {
-				return date.getMonth() + 1;
-			});
+			return date.getMonth() + 1;
+		});
 		format = replaceIfNotInBraces(format, "yyyy", function () {
-				return padLeft(4, date.getFullYear());
-			});
+			return padLeft(4, date.getFullYear());
+		});
 		format = replaceIfNotInBraces(format, "yy", function () {
-				return getLast(2, date.getFullYear());
-			});
+			return getLast(2, date.getFullYear());
+		});
 		format = replaceIfNotInBraces(format, "HH", function () {
-				return padLeft(2, date.getHours());
-			});
+			return padLeft(2, date.getHours());
+		});
 		format = replaceIfNotInBraces(format, "H", function () {
-				return date.getHours();
-			});
+			return date.getHours();
+		});
 		format = replaceIfNotInBraces(format, "hh", function () {
-				return padLeft(2, date.getHours() > 12 ? date.getHours() - 12 : date.getHours());
-			});
+			return padLeft(2, date.getHours() > 12 ? date.getHours() - 12 : date.getHours());
+		});
 		format = replaceIfNotInBraces(format, "h", function () {
-				return date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-			});
+			return date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+		});
 		format = replaceIfNotInBraces(format, "mm", function () {
-				return padLeft(2, date.getMinutes());
-			});
+			return padLeft(2, date.getMinutes());
+		});
 		format = replaceIfNotInBraces(format, "m", function () {
-				return date.getMinutes();
-			});
+			return date.getMinutes();
+		});
 		format = replaceIfNotInBraces(format, "ss", function () {
-				return padLeft(2, date.getSeconds());
-			});
+			return padLeft(2, date.getSeconds());
+		});
 		format = replaceIfNotInBraces(format, "s", function () {
-				return date.getSeconds();
-			});
+			return date.getSeconds();
+		});
 		format = replaceIfNotInBraces(format, "fff", function () {
-				return padLeft(3, date.getMilliseconds());
-			});
+			return padLeft(3, date.getMilliseconds());
+		});
 		format = replaceIfNotInBraces(format, "ff", function () {
-				return getFirst(2, padLeft(2, date.getMilliseconds()));
-			});
+			return getFirst(2, padLeft(2, date.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "f", function () {
-				return getFirst(1, date.getMilliseconds());
-			});
+			return getFirst(1, date.getMilliseconds());
+		});
 		format = replaceIfNotInBraces(format, "tt", function () {
-				return date.getHours() > 12 ? "PM" : "AM";
-			});
+			return date.getHours() > 12 ? "PM" : "AM";
+		});
 		format = replaceIfNotInBraces(format, "zzzz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hhmm");
-				return time.format("hhmm");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hhmm");
+			return time.format("hhmm");
+		});
 		format = replaceIfNotInBraces(format, "zzz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hh:mm");
-				return time.format("hh:mm");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hh:mm");
+			return time.format("hh:mm");
+		});
 		format = replaceIfNotInBraces(format, "zz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hh");
-				return time.format("hh");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hh");
+			return time.format("hh");
+		});
 		format = replaceIfNotInBraces(format, "z", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("h");
-				return time.format("h");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("h");
+			return time.format("h");
+		});
 		return format.split("`").join("");
 	}
+
 	function parseDate(dateTxt, format, culture) {
 		culture = culture || Culture.current();
 		if (typeof culture == "string") {
@@ -156,7 +157,9 @@ require("./Time.format.js");
 		var tt = null;
 		var timeZone = null;
 		var keys = format
-			.match(/`[^`]+`|([d]{1,4}|[M]{1,3}|yyyy|yy|[h]{1,2}|[H]{1,2}|[m]{1,2}|[s]{1,2}|[f]{1,3}|tt|zzzz|[z]{1,3})+/gm);
+			.match(
+				/`[^`]+`|([d]{1,4}|[M]{1,3}|yyyy|yy|[h]{1,2}|[H]{1,2}|[m]{1,2}|[s]{1,2}|[f]{1,3}|tt|zzzz|[z]{1,3})+/gm
+			);
 		var values = dateTxt.match(/`[^`]+`|[+|-][0-9]{2,4}([:][0-9]{2})?|\w+/gm);
 
 		if (!values)
@@ -256,11 +259,14 @@ require("./Time.format.js");
 				var time = null;
 
 				if (value.indexOf("-") == 0)
-					time = parseTime(value.substring(0, 3) + ":" + value.substring(3, 5), "HH:mm");
+					time = parseTime(value.substring(0, 3) + ":" + value.substring(3, 5),
+						"HH:mm");
 				else if (value.indexOf("+") == 0)
-					time = parseTime(value.substring(1, 3) + ":" + value.substring(3, 5), "HH:mm");
+					time = parseTime(value.substring(1, 3) + ":" + value.substring(3, 5),
+						"HH:mm");
 				else
-					time = parseTime(value.substring(0, 2) + ":" + value.substring(2, 4), "HH:mm");
+					time = parseTime(value.substring(0, 2) + ":" + value.substring(2, 4),
+						"HH:mm");
 				if (time == null)
 					return null;
 
@@ -311,11 +317,12 @@ require("./Time.format.js");
 	}
 
 	Object.defineProperty(Date.prototype, 'format', {
-		enumerable : false,
-		value : function format(format, culture) {
+		enumerable: false,
+		value: function format(format, culture) {
 			return Date.format(this, format, culture);
 		}
 	});
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -330,10 +337,12 @@ require("./Time.format.js");
 			return "-" + value;
 		return value;
 	}
+
 	function getLast(n, value) {
 		value = (value + "");
 		return value.substring(value.length - n);
 	}
+
 	function getFirst(n, value) {
 		value = (value + "");
 		return value.substring(0, n);

@@ -11,9 +11,9 @@ require("./src/String.format.js");
 (function (global) {
 
 	var Culture = {
-		cultures : {},
-		currentCulture : null,
-		add : function (culture) {
+		cultures: {},
+		currentCulture: null,
+		add: function (culture) {
 
 			var countryCode = culture.name.toLowerCase();
 			var languageCode = countryCode.split("-")[0];
@@ -27,13 +27,13 @@ require("./src/String.format.js");
 			if (!this.currentCulture)
 				this.currentCulture = culture.name;
 		},
-		set : function (cultureName) {
+		set: function (cultureName) {
 			this.currentCulture = cultureName.toLowerCase();
 		},
-		get : function (cultureName) {
+		get: function (cultureName) {
 			return this.cultures[cultureName.toLowerCase()];
 		},
-		current : function () {
+		current: function () {
 			return Culture.get(this.currentCulture);
 		}
 	};
@@ -42,243 +42,255 @@ require("./src/String.format.js");
 })(typeof GLOBAL != "undefined" ? GLOBAL : window);
 
 },{}],3:[function(require,module,exports){
-
 require("./Culture.js");
 
 Culture.add({
-	name : "pt-BR",
-	displayName : "Português (Brasil)",
+	name: "pt-BR",
+	displayName: "Português (Brasil)",
 	//calendar month and week names
-	shortMonths : "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez".split(","),
-	months : "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro".split(","),
-	days : "Domingo,Segunda-Feira,Terça-Feira,Quarta-Feira,Quinta-Feira,Sexta-Feira,Sábado".split(","),
-	shortDays : "Dom,Seg,Ter,Quar,Qui,Sex,Sáb".split(","),
+	shortMonths: "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez".split(","),
+	months: "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro"
+		.split(","),
+	days: "Domingo,Segunda-Feira,Terça-Feira,Quarta-Feira,Quinta-Feira,Sexta-Feira,Sábado"
+		.split(","),
+	shortDays: "Dom,Seg,Ter,Quar,Qui,Sex,Sáb".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd/MM",
-	dateFormat : "dd/MM/yyyy",
-	dateTimeFormat : "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
+	shortDateFormat: "dd/MM",
+	dateFormat: "dd/MM/yyyy",
+	dateTimeFormat: "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
 	//currency and number formats
-	currencySymbol : "R$",
-	currencySymbolPosition : "before",
-	currencySymbolWithSpace : true, //Number.format(1587.67, "C") -> R$ 1.587,67
-	numberFormat : "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
-	shortNumberFormat : "0,00", //Number.format(1587.67, "F") -> 1587,67
-	percentageSymbolWithSpace : false //Number.format(0.1567, "P") -> 15,67%
+	currencySymbol: "R$",
+	currencySymbolPosition: "before",
+	currencySymbolWithSpace: true, //Number.format(1587.67, "C") -> R$ 1.587,67
+	numberFormat: "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
+	shortNumberFormat: "0,00", //Number.format(1587.67, "F") -> 1587,67
+	percentageSymbolWithSpace: false //Number.format(0.1567, "P") -> 15,67%
 });
 Culture.add({
-	name : "pt-PT",
-	displayName : "Português",
+	name: "pt-PT",
+	displayName: "Português",
 	//calendar month and week names
-	shortMonths : "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez".split(","),
-	months : "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro".split(","),
-	days : "Domingo,Segunda-Feira,Terça-Feira,Quarta-Feira,Quinta-Feira,Sexta-Feira,Sábado".split(","),
-	shortDays : "Dom,Seg,Ter,Quar,Qui,Sex,Sáb".split(","),
+	shortMonths: "Jan,Fev,Mar,Abr,Mai,Jun,Jul,Ago,Set,Out,Nov,Dez".split(","),
+	months: "Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro"
+		.split(","),
+	days: "Domingo,Segunda-Feira,Terça-Feira,Quarta-Feira,Quinta-Feira,Sexta-Feira,Sábado"
+		.split(","),
+	shortDays: "Dom,Seg,Ter,Quar,Qui,Sex,Sáb".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd/MM",
-	dateFormat : "dd/MM/yyyy",
-	dateTimeFormat : "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
+	shortDateFormat: "dd/MM",
+	dateFormat: "dd/MM/yyyy",
+	dateTimeFormat: "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
 	//currency and number formats
-	currencySymbol : "\u20AC", //"€",
-	currencySymbolPosition : "after",
-	currencySymbolWithSpace : true, //Number.format(1587.67, "C") -> 1 587,67 €
-	numberFormat : "0 000,00", //Number.format(1587.67, "N") -> 1 587,67
-	shortNumberFormat : "0,00", //Number.format(1587.67, "F") -> 1587,67
-	percentageSymbolWithSpace : false //Number.format(0.1567, "P") -> 15,67%
+	currencySymbol: "\u20AC", //"€",
+	currencySymbolPosition: "after",
+	currencySymbolWithSpace: true, //Number.format(1587.67, "C") -> 1 587,67 €
+	numberFormat: "0 000,00", //Number.format(1587.67, "N") -> 1 587,67
+	shortNumberFormat: "0,00", //Number.format(1587.67, "F") -> 1587,67
+	percentageSymbolWithSpace: false //Number.format(0.1567, "P") -> 15,67%
 });
 Culture.add({
-	name : "de-DE",
-	displayName : "Deutsch",
+	name: "de-DE",
+	displayName: "Deutsch",
 	//calendar month and week names
-	shortMonths : "Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez".split(","),
-	months : "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember".split(","),
-	days : "Sonntag,Montag,Dienstag,Mittwoch,Donnerstag,Freitag,Samstag".split(","),
-	shortDays : "Son,Mon,Die,Mit,Don,Fre,Sam".split(","),
+	shortMonths: "Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez".split(","),
+	months: "Januar,Februar,März,April,Mai,Juni,Juli,August,September,Oktober,November,Dezember"
+		.split(","),
+	days: "Sonntag,Montag,Dienstag,Mittwoch,Donnerstag,Freitag,Samstag".split(
+		","),
+	shortDays: "Son,Mon,Die,Mit,Don,Fre,Sam".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd.MM",
-	dateFormat : "dd.MM.yyyy",
-	dateTimeFormat : "dd.MM.yyyy HH:mm:ss", //Date.format(new Date())-> 15.03.1992 15:45:19
+	shortDateFormat: "dd.MM",
+	dateFormat: "dd.MM.yyyy",
+	dateTimeFormat: "dd.MM.yyyy HH:mm:ss", //Date.format(new Date())-> 15.03.1992 15:45:19
 	//currency and number formats
-	currencySymbol : "\u20AC", //"€",
-	currencySymbolPosition : "after",
-	currencySymbolWithSpace : true, //Number.format(1587.67, "C") -> 1.587,67 €
-	numberFormat : "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
-	shortNumberFormat : "0,00", //Number.format(1587.67, "F") -> 1587,67
-	percentageSymbolWithSpace : true //Number.format(0.1567, "P") -> 15,67 %
+	currencySymbol: "\u20AC", //"€",
+	currencySymbolPosition: "after",
+	currencySymbolWithSpace: true, //Number.format(1587.67, "C") -> 1.587,67 €
+	numberFormat: "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
+	shortNumberFormat: "0,00", //Number.format(1587.67, "F") -> 1587,67
+	percentageSymbolWithSpace: true //Number.format(0.1567, "P") -> 15,67 %
 });
 Culture.add({
-	name : "fr-FR",
-	displayName : "Français",
+	name: "fr-FR",
+	displayName: "Français",
 	//calendar month and week names
-	shortMonths : "janv,févr,mars,avr,mai,juin,juil,août,sept,oct,nov,déc".split(","),
-	months : "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre".split(","),
-	days : "dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi".split(","),
-	shortDays : "dim,lun,mar,mer,jeu,vend,sam".split(","),
+	shortMonths: "janv,févr,mars,avr,mai,juin,juil,août,sept,oct,nov,déc".split(
+		","),
+	months: "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre"
+		.split(","),
+	days: "dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi".split(","),
+	shortDays: "dim,lun,mar,mer,jeu,vend,sam".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd/MM",
-	dateFormat : "dd/MM/yyyy",
-	dateTimeFormat : "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
+	shortDateFormat: "dd/MM",
+	dateFormat: "dd/MM/yyyy",
+	dateTimeFormat: "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
 	//currency and number formats
-	currencySymbol : "\u20AC", //"€",
-	currencySymbolPosition : "after",
-	currencySymbolWithSpace : true, //Number.format(1587.67, "C") -> 1 587,67 €
-	numberFormat : "0 000,00", //Number.format(1587.67, "N") -> 1 587,67
-	shortNumberFormat : "0,00", //Number.format(1587.67, "F") -> 1587,67
-	percentageSymbolWithSpace : true //Number.format(0.1567, "P") -> 15,67 %
+	currencySymbol: "\u20AC", //"€",
+	currencySymbolPosition: "after",
+	currencySymbolWithSpace: true, //Number.format(1587.67, "C") -> 1 587,67 €
+	numberFormat: "0 000,00", //Number.format(1587.67, "N") -> 1 587,67
+	shortNumberFormat: "0,00", //Number.format(1587.67, "F") -> 1587,67
+	percentageSymbolWithSpace: true //Number.format(0.1567, "P") -> 15,67 %
 });
 Culture.add({
-	name : "it-IT",
-	displayName : "Italiano",
+	name: "it-IT",
+	displayName: "Italiano",
 	//calendar month and week names
-	shortMonths : "gen,feb,mar,apr,mag,giu,lug,ago,set,ott,nov,dic".split(","),
-	months : "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre".split(","),
-	days : "domenica,lunedì,martedì,mercoledì,giovedì,venerdì,sabato".split(","),
-	shortDays : "dom,lun,mar,mer,gio,ven,sab".split(","),
+	shortMonths: "gen,feb,mar,apr,mag,giu,lug,ago,set,ott,nov,dic".split(","),
+	months: "gennaio,febbraio,marzo,aprile,maggio,giugno,luglio,agosto,settembre,ottobre,novembre,dicembre"
+		.split(","),
+	days: "domenica,lunedì,martedì,mercoledì,giovedì,venerdì,sabato".split(","),
+	shortDays: "dom,lun,mar,mer,gio,ven,sab".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd/MM",
-	dateFormat : "dd/MM/yyyy",
-	dateTimeFormat : "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
+	shortDateFormat: "dd/MM",
+	dateFormat: "dd/MM/yyyy",
+	dateTimeFormat: "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
 	//currency and number formats
-	currencySymbol : "\u20AC", //"€",
-	currencySymbolPosition : "after",
-	currencySymbolWithSpace : true, //Number.format(1587.67, "C") -> 1.587,67 €
-	numberFormat : "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
-	shortNumberFormat : "0,00", //Number.format(1587.67, "F") -> 1587,67
-	percentageSymbolWithSpace : false //Number.format(0.1567, "P") -> 15,67%
+	currencySymbol: "\u20AC", //"€",
+	currencySymbolPosition: "after",
+	currencySymbolWithSpace: true, //Number.format(1587.67, "C") -> 1.587,67 €
+	numberFormat: "0.000,00", //Number.format(1587.67, "N") -> 1.587,67
+	shortNumberFormat: "0,00", //Number.format(1587.67, "F") -> 1587,67
+	percentageSymbolWithSpace: false //Number.format(0.1567, "P") -> 15,67%
 });
 Culture.add({
-	name : "es-ES",
-	displayName : "Español",
+	name: "es-ES",
+	displayName: "Español",
 	//calendar month and week names
-	shortMonths : "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic".split(","),
-	months : "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre".split(","),
-	days : "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado".split(","),
-	shortDays : "Dom,Lun,Mar,Mié,Jue,Vier,Sáb".split(","),
+	shortMonths: "Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic".split(","),
+	months: "Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre"
+		.split(","),
+	days: "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado".split(","),
+	shortDays: "Dom,Lun,Mar,Mié,Jue,Vier,Sáb".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "h:mm:ss tt",
-	shortDateTimePartFormat : "h:mm tt",
+	dateTimePartFormat: "h:mm:ss tt",
+	shortDateTimePartFormat: "h:mm tt",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "MM/dd",
-	dateFormat : "MM/dd/yyyy",
-	dateTimeFormat : "MM/dd/yyyy h:mm:ss tt", //Date.format(new Date())-> 15/03/1992 3:45:19 PM
+	shortDateFormat: "MM/dd",
+	dateFormat: "MM/dd/yyyy",
+	dateTimeFormat: "MM/dd/yyyy h:mm:ss tt", //Date.format(new Date())-> 15/03/1992 3:45:19 PM
 	//currency and number formats
-	currencySymbol : "\u20AC", //"€",
-	currencySymbolPosition : "before",
-	currencySymbolWithSpace : false, //Number.format(1587.67, "C") -> € 1,587.67
-	numberFormat : "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
-	shortNumberFormat : "0.00", //Number.format(1587.67, "F") -> 1587.67
-	percentageSymbolWithSpace : true //Number.format(0.1567, "P") -> 15.67 %
+	currencySymbol: "\u20AC", //"€",
+	currencySymbolPosition: "before",
+	currencySymbolWithSpace: false, //Number.format(1587.67, "C") -> € 1,587.67
+	numberFormat: "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
+	shortNumberFormat: "0.00", //Number.format(1587.67, "F") -> 1587.67
+	percentageSymbolWithSpace: true //Number.format(0.1567, "P") -> 15.67 %
 });
 
 Culture.add({
-	name : "en-US",
-	displayName : "English",
+	name: "en-US",
+	displayName: "English",
 	//calendar month and week names
-	shortMonths : "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
-	months : "January,February,March,April,May,June,July,August,September,October,November,December".split(","),
-	days : "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
-	shortDays : "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
+	shortMonths: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
+	months: "January,February,March,April,May,June,July,August,September,October,November,December"
+		.split(","),
+	days: "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
+	shortDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "h:mm:ss tt",
-	shortDateTimePartFormat : "h:mm tt",
+	dateTimePartFormat: "h:mm:ss tt",
+	shortDateTimePartFormat: "h:mm tt",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "MM/dd",
-	dateFormat : "MM/dd/yyyy",
-	dateTimeFormat : "MM/dd/yyyy h:mm:ss tt", //Date.format(new Date())-> 15/03/1992 3:45:19 PM
+	shortDateFormat: "MM/dd",
+	dateFormat: "MM/dd/yyyy",
+	dateTimeFormat: "MM/dd/yyyy h:mm:ss tt", //Date.format(new Date())-> 15/03/1992 3:45:19 PM
 	//currency and number formats
-	currencySymbol : "$",
-	currencySymbolPosition : "before",
-	currencySymbolWithSpace : false, //Number.format(1587.67, "C") -> $1,587.67
-	numberFormat : "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
-	shortNumberFormat : "0.00", //Number.format(1587.67, "F") -> 1587.67
-	percentageSymbolWithSpace : true //Number.format(0.1567, "P") -> 15.67 %
+	currencySymbol: "$",
+	currencySymbolPosition: "before",
+	currencySymbolWithSpace: false, //Number.format(1587.67, "C") -> $1,587.67
+	numberFormat: "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
+	shortNumberFormat: "0.00", //Number.format(1587.67, "F") -> 1587.67
+	percentageSymbolWithSpace: true //Number.format(0.1567, "P") -> 15.67 %
 });
 Culture.add({
-	name : "en-CA",
-	displayName : "English (Canada)",
+	name: "en-CA",
+	displayName: "English (Canada)",
 	//calendar month and week names
-	shortMonths : "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
-	months : "January,February,March,April,May,June,July,August,September,October,November,December".split(","),
-	days : "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
-	shortDays : "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
+	shortMonths: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
+	months: "January,February,March,April,May,June,July,August,September,October,November,December"
+		.split(","),
+	days: "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
+	shortDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "h:mm:ss tt",
-	shortDateTimePartFormat : "h:mm tt",
+	dateTimePartFormat: "h:mm:ss tt",
+	shortDateTimePartFormat: "h:mm tt",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "MM-dd",
-	dateFormat : "yyyy-MM-dd",
-	dateTimeFormat : "yyyy-MM-dd h:mm:ss tt", //Date.format(new Date())-> 1992-MM-dd 3:45:19 PM
+	shortDateFormat: "MM-dd",
+	dateFormat: "yyyy-MM-dd",
+	dateTimeFormat: "yyyy-MM-dd h:mm:ss tt", //Date.format(new Date())-> 1992-MM-dd 3:45:19 PM
 	//currency and number formats
-	currencySymbol : "$",
-	currencySymbolPosition : "before",
-	currencySymbolWithSpace : false, //Number.format(1587.67, "C") -> $1,587.67
-	numberFormat : "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
-	shortNumberFormat : "0.00", //Number.format(1587.67, "F") -> 1587.67
-	percentageSymbolWithSpace : true //Number.format(0.1567, "P") -> 15.67 %
+	currencySymbol: "$",
+	currencySymbolPosition: "before",
+	currencySymbolWithSpace: false, //Number.format(1587.67, "C") -> $1,587.67
+	numberFormat: "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
+	shortNumberFormat: "0.00", //Number.format(1587.67, "F") -> 1587.67
+	percentageSymbolWithSpace: true //Number.format(0.1567, "P") -> 15.67 %
 });
 Culture.add({
-	name : "en-GB",
-	displayName : "British",
+	name: "en-GB",
+	displayName: "British",
 	//calendar month and week names
-	shortMonths : "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
-	months : "January,February,March,April,May,June,July,August,September,October,November,December".split(","),
-	days : "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
-	shortDays : "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
+	shortMonths: "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec".split(","),
+	months: "January,February,March,April,May,June,July,August,September,October,November,December"
+		.split(","),
+	days: "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday".split(","),
+	shortDays: "Sun,Mon,Tue,Wed,Thu,Fri,Sat".split(","),
 	//time format for Date Object
-	dateTimePartFormat : "HH:mm:ss",
-	shortDateTimePartFormat : "HH:mm",
+	dateTimePartFormat: "HH:mm:ss",
+	shortDateTimePartFormat: "HH:mm",
 	//time format for Time Object
-	timeFormat : "HH:mm:ss",
-	shortTimeFormat : "HH:mm",
+	timeFormat: "HH:mm:ss",
+	shortTimeFormat: "HH:mm",
 	//dates formats
-	shortDateFormat : "dd/MM",
-	dateFormat : "dd/MM/yyyy",
-	dateTimeFormat : "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
+	shortDateFormat: "dd/MM",
+	dateFormat: "dd/MM/yyyy",
+	dateTimeFormat: "dd/MM/yyyy HH:mm:ss", //Date.format(new Date())-> 15/03/1992 15:45:19
 	//currency and number formats
-	currencySymbol : "\u00A3", //"£",
-	currencySymbolPosition : "before",
-	currencySymbolWithSpace : false, //Number.format(1587.67, "C") -> £1,587.67
-	numberFormat : "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
-	shortNumberFormat : "0.00", //Number.format(1587.67, "F") -> 1587.67
-	percentageSymbolWithSpace : false //Number.format(0.1567, "P") -> 15.67%
+	currencySymbol: "\u00A3", //"£",
+	currencySymbolPosition: "before",
+	currencySymbolWithSpace: false, //Number.format(1587.67, "C") -> £1,587.67
+	numberFormat: "0,000.00", //Number.format(1587.67, "N") -> 1,587.67
+	shortNumberFormat: "0.00", //Number.format(1587.67, "F") -> 1587.67
+	percentageSymbolWithSpace: false //Number.format(0.1567, "P") -> 15.67%
 });
 
 },{"./Culture.js":2}],4:[function(require,module,exports){
@@ -314,101 +326,102 @@ require("./Time.format.js");
 		format = format || culture.dateTimeFormat;
 
 		format = replaceIfNotInBraces(format, "dddd", function () {
-				return "`" + culture.days[date.getDay()] + "`";
-			});
+			return "`" + culture.days[date.getDay()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "ddd", function () {
-				return "`" + culture.shortDays[date.getDay()] + "`";
-			});
+			return "`" + culture.shortDays[date.getDay()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "dd", function () {
-				return padLeft(2, date.getDate());
-			});
+			return padLeft(2, date.getDate());
+		});
 		format = replaceIfNotInBraces(format, "d", function () {
-				return date.getDate();
-			});
+			return date.getDate();
+		});
 		format = replaceIfNotInBraces(format, "MMMM", function () {
-				return "`" + culture.months[date.getMonth()] + "`";
-			});
+			return "`" + culture.months[date.getMonth()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "MMM", function () {
-				return "`" + culture.shortMonths[date.getMonth()] + "`";
-			});
+			return "`" + culture.shortMonths[date.getMonth()] + "`";
+		});
 		format = replaceIfNotInBraces(format, "MM", function () {
-				return padLeft(2, date.getMonth() + 1);
-			});
+			return padLeft(2, date.getMonth() + 1);
+		});
 		format = replaceIfNotInBraces(format, "M", function () {
-				return date.getMonth() + 1;
-			});
+			return date.getMonth() + 1;
+		});
 		format = replaceIfNotInBraces(format, "yyyy", function () {
-				return padLeft(4, date.getFullYear());
-			});
+			return padLeft(4, date.getFullYear());
+		});
 		format = replaceIfNotInBraces(format, "yy", function () {
-				return getLast(2, date.getFullYear());
-			});
+			return getLast(2, date.getFullYear());
+		});
 		format = replaceIfNotInBraces(format, "HH", function () {
-				return padLeft(2, date.getHours());
-			});
+			return padLeft(2, date.getHours());
+		});
 		format = replaceIfNotInBraces(format, "H", function () {
-				return date.getHours();
-			});
+			return date.getHours();
+		});
 		format = replaceIfNotInBraces(format, "hh", function () {
-				return padLeft(2, date.getHours() > 12 ? date.getHours() - 12 : date.getHours());
-			});
+			return padLeft(2, date.getHours() > 12 ? date.getHours() - 12 : date.getHours());
+		});
 		format = replaceIfNotInBraces(format, "h", function () {
-				return date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
-			});
+			return date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+		});
 		format = replaceIfNotInBraces(format, "mm", function () {
-				return padLeft(2, date.getMinutes());
-			});
+			return padLeft(2, date.getMinutes());
+		});
 		format = replaceIfNotInBraces(format, "m", function () {
-				return date.getMinutes();
-			});
+			return date.getMinutes();
+		});
 		format = replaceIfNotInBraces(format, "ss", function () {
-				return padLeft(2, date.getSeconds());
-			});
+			return padLeft(2, date.getSeconds());
+		});
 		format = replaceIfNotInBraces(format, "s", function () {
-				return date.getSeconds();
-			});
+			return date.getSeconds();
+		});
 		format = replaceIfNotInBraces(format, "fff", function () {
-				return padLeft(3, date.getMilliseconds());
-			});
+			return padLeft(3, date.getMilliseconds());
+		});
 		format = replaceIfNotInBraces(format, "ff", function () {
-				return getFirst(2, padLeft(2, date.getMilliseconds()));
-			});
+			return getFirst(2, padLeft(2, date.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "f", function () {
-				return getFirst(1, date.getMilliseconds());
-			});
+			return getFirst(1, date.getMilliseconds());
+		});
 		format = replaceIfNotInBraces(format, "tt", function () {
-				return date.getHours() > 12 ? "PM" : "AM";
-			});
+			return date.getHours() > 12 ? "PM" : "AM";
+		});
 		format = replaceIfNotInBraces(format, "zzzz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hhmm");
-				return time.format("hhmm");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hhmm");
+			return time.format("hhmm");
+		});
 		format = replaceIfNotInBraces(format, "zzz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hh:mm");
-				return time.format("hh:mm");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hh:mm");
+			return time.format("hh:mm");
+		});
 		format = replaceIfNotInBraces(format, "zz", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("hh");
-				return time.format("hh");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("hh");
+			return time.format("hh");
+		});
 		format = replaceIfNotInBraces(format, "z", function () {
-				var time = new Time();
-				time.addMinutes(date.getTimezoneOffset() * -1);
-				if (time.getTime() >= 0)
-					return "+" + time.format("h");
-				return time.format("h");
-			});
+			var time = new Time();
+			time.addMinutes(date.getTimezoneOffset() * -1);
+			if (time.getTime() >= 0)
+				return "+" + time.format("h");
+			return time.format("h");
+		});
 		return format.split("`").join("");
 	}
+
 	function parseDate(dateTxt, format, culture) {
 		culture = culture || Culture.current();
 		if (typeof culture == "string") {
@@ -440,7 +453,9 @@ require("./Time.format.js");
 		var tt = null;
 		var timeZone = null;
 		var keys = format
-			.match(/`[^`]+`|([d]{1,4}|[M]{1,3}|yyyy|yy|[h]{1,2}|[H]{1,2}|[m]{1,2}|[s]{1,2}|[f]{1,3}|tt|zzzz|[z]{1,3})+/gm);
+			.match(
+				/`[^`]+`|([d]{1,4}|[M]{1,3}|yyyy|yy|[h]{1,2}|[H]{1,2}|[m]{1,2}|[s]{1,2}|[f]{1,3}|tt|zzzz|[z]{1,3})+/gm
+			);
 		var values = dateTxt.match(/`[^`]+`|[+|-][0-9]{2,4}([:][0-9]{2})?|\w+/gm);
 
 		if (!values)
@@ -540,11 +555,14 @@ require("./Time.format.js");
 				var time = null;
 
 				if (value.indexOf("-") == 0)
-					time = parseTime(value.substring(0, 3) + ":" + value.substring(3, 5), "HH:mm");
+					time = parseTime(value.substring(0, 3) + ":" + value.substring(3, 5),
+						"HH:mm");
 				else if (value.indexOf("+") == 0)
-					time = parseTime(value.substring(1, 3) + ":" + value.substring(3, 5), "HH:mm");
+					time = parseTime(value.substring(1, 3) + ":" + value.substring(3, 5),
+						"HH:mm");
 				else
-					time = parseTime(value.substring(0, 2) + ":" + value.substring(2, 4), "HH:mm");
+					time = parseTime(value.substring(0, 2) + ":" + value.substring(2, 4),
+						"HH:mm");
 				if (time == null)
 					return null;
 
@@ -595,11 +613,12 @@ require("./Time.format.js");
 	}
 
 	Object.defineProperty(Date.prototype, 'format', {
-		enumerable : false,
-		value : function format(format, culture) {
+		enumerable: false,
+		value: function format(format, culture) {
 			return Date.format(this, format, culture);
 		}
 	});
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -614,10 +633,12 @@ require("./Time.format.js");
 			return "-" + value;
 		return value;
 	}
+
 	function getLast(n, value) {
 		value = (value + "");
 		return value.substring(value.length - n);
 	}
+
 	function getFirst(n, value) {
 		value = (value + "");
 		return value.substring(0, n);
@@ -690,7 +711,8 @@ require("./Culture.js");
 				decimalPlaces = "";
 			}
 
-			var symbolLength = culture.currencySymbol.length + (culture.currencySymbolWithSpace ? 1 : 0);
+			var symbolLength = culture.currencySymbol.length + (culture.currencySymbolWithSpace ?
+				1 : 0);
 			var symbol = "";
 			if (culture.currencySymbolPosition == "after") {
 				symbol = numberTxt.substring(numberTxt.length - culture.currencySymbol.length);
@@ -816,7 +838,8 @@ require("./Culture.js");
 
 			if (culture.currencySymbolPosition == "after")
 				return money + (culture.currencySymbolWithSpace ? " " : "") + culture.currencySymbol;
-			return culture.currencySymbol + (culture.currencySymbolWithSpace ? " " : "") + money;
+			return culture.currencySymbol + (culture.currencySymbolWithSpace ? " " :
+				"") + money;
 		}
 		if (upperCaseFormat.indexOf("F") == 0) {
 			var decimalPlaces = parseInt(format.substring(1));
@@ -871,7 +894,8 @@ require("./Culture.js");
 			if (isNaN(decimalPlaces)) {
 				decimalPlaces = 2;
 			}
-			return Number.format(n * 100, "F" + decimalPlaces, culture) + (culture.percentageSymbolWithSpace ? " %" : "%");
+			return Number.format(n * 100, "F" + decimalPlaces, culture) + (culture.percentageSymbolWithSpace ?
+				" %" : "%");
 		}
 
 		if (format.match(/[^0., ]/)) {
@@ -903,39 +927,45 @@ require("./Culture.js");
 			var end = (parts[1] || "");
 			var init = (parts[0] || "");
 			var decimalParts = n.toFixed(end.length).split(".")[1];
-			return padLeft(init.length, numberIntPart) + (decimalParts ? (decimalSeparator + decimalParts) : "");
+			return padLeft(init.length, numberIntPart) + (decimalParts ? (
+				decimalSeparator + decimalParts) : "");
 		}
 
 		var decimalPartsSize = (format.split(decimalSeparator)[1] || "").length;
-		var thousandsPartSize = (format.split(decimalSeparator)[0].split(thousandsSeparator)[1] || "").length;
+		var thousandsPartSize = (format.split(decimalSeparator)[0].split(
+			thousandsSeparator)[1] || "").length;
 
 		var formatComplex = function (n, c, d, t, tc) {
 			c = isNaN(c = Math.abs(c)) ? 2 : c,
-			d = d == undefined ? "." : d,
-			t = t == undefined ? "," : t,
-			s = n < 0 ? "-" : "",
-			i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-			j = (j = i.length) > tc ? j % tc : 0;
-			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(new RegExp("(\\d{" + tc + "})(?=\\d)", "g"), "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+				d = d == undefined ? "." : d,
+				t = t == undefined ? "," : t,
+				s = n < 0 ? "-" : "",
+				i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+				j = (j = i.length) > tc ? j % tc : 0;
+			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(new RegExp(
+				"(\\d{" + tc + "})(?=\\d)", "g"), "$1" + t) + (c ? d + Math.abs(n - i).toFixed(
+				c).slice(2) : "");
 		};
-		return formatComplex(n, decimalPartsSize, decimalSeparator, thousandsSeparator, thousandsPartSize);
+		return formatComplex(n, decimalPartsSize, decimalSeparator,
+			thousandsSeparator, thousandsPartSize);
 	};
 
 	Number.isInteger = Number.isInteger || function (value) {
 		return typeof value === "number" &&
-		isFinite(value) &&
-		Math.floor(value) === value;
+			isFinite(value) &&
+			Math.floor(value) === value;
 	};
 	Number.isSafeInteger = Number.isSafeInteger || function (value) {
 		return Number.isInteger(value) && Math.abs(value) <= Number.MAX_SAFE_INTEGER;
 	};
 
 	Object.defineProperty(Number.prototype, 'format', {
-		enumerable : false,
-		value : function format(format, culture) {
+		enumerable: false,
+		value: function format(format, culture) {
 			return Number.format(this, format, culture);
 		}
 	});
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -950,6 +980,7 @@ require("./Culture.js");
 			return "-" + value;
 		return value;
 	}
+
 	function replaceIfNotInBraces(text, separator, replacamentCallBack) {
 
 		var newText = "";
@@ -1019,8 +1050,8 @@ String.format = function (text, values, culture) {
 	});
 }
 Object.defineProperty(String.prototype, 'format', {
-	enumerable : false,
-	value : function format(format, culture) {
+	enumerable: false,
+	value: function format(format, culture) {
 		Array.prototype.unshift.call(arguments, this);
 		return String.format.apply(null, arguments);
 	}
@@ -1089,11 +1120,13 @@ require("./Culture.js");
 			return this;
 		};
 		this.setMinutes = function (minutes) {
-			milliseconds = milliseconds - (this.getMinutes() * MINUTE) + (minutes * MINUTE);
+			milliseconds = milliseconds - (this.getMinutes() * MINUTE) + (minutes *
+				MINUTE);
 			return this;
 		};
 		this.setSeconds = function (seconds) {
-			milliseconds = milliseconds - (this.getSeconds() * MINUTE) + (seconds * SECOND);
+			milliseconds = milliseconds - (this.getSeconds() * MINUTE) + (seconds *
+				SECOND);
 			return this;
 		};
 		this.setMilliseconds = function (ms) {
@@ -1118,13 +1151,16 @@ require("./Culture.js");
 			return parseInt(milliseconds / HOUR);
 		};
 		this.getMinutes = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR)) / MINUTE);
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR)) /
+				MINUTE);
 		};
 		this.getSeconds = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) - (this.getMinutes() * MINUTE)) / SECOND);
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) -
+				(this.getMinutes() * MINUTE)) / SECOND);
 		};
 		this.getMilliseconds = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) - (this.getMinutes() * MINUTE) - (this.getSeconds() * SECOND)));
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) -
+				(this.getMinutes() * MINUTE) - (this.getSeconds() * SECOND)));
 		};
 		this.getTime = function () {
 			return this.getTotalMilliseconds();
@@ -1138,9 +1174,9 @@ require("./Culture.js");
 		};
 
 		this.format = function (format, culture) {
-			return Time.format(this, format, culture);
-		}
-		//constructor
+				return Time.format(this, format, culture);
+			}
+			//constructor
 		if (arguments.length == 1) {
 			if (Number.isSafeInteger(arguments[0]))
 				milliseconds = arguments[0];
@@ -1166,10 +1202,12 @@ require("./Culture.js");
 	Time.fromDate = function (date) {
 		if (!date || !(date instanceof Date))
 			return;
-		return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
+		return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date
+			.getMilliseconds());
 	};
 	Time.fromDateDiff = function (dateA, dateB) {
-		return new Time((dateA ? dateA.getTime() : 0) - (dateB ? dateB.getTime() : 0));
+		return new Time((dateA ? dateA.getTime() : 0) - (dateB ? dateB.getTime() :
+			0));
 	};
 	Time.compare = function (timeA, timeB) {
 		return timeA.compare(timeB);
@@ -1198,44 +1236,44 @@ require("./Culture.js");
 		}
 
 		format = replaceIfNotInBraces(format, "hhh", function () {
-				return time.getTotalHours();
-			});
+			return time.getTotalHours();
+		});
 		format = replaceIfNotInBraces(format, "hh", function () {
-				return padLeft(2, time.getHours());
-			});
+			return padLeft(2, time.getHours());
+		});
 		format = replaceIfNotInBraces(format, "h", function () {
-				return time.getHours();
-			});
+			return time.getHours();
+		});
 		format = replaceIfNotInBraces(format, "mmm", function () {
-				return time.getTotalMinutes();
-			});
+			return time.getTotalMinutes();
+		});
 		format = replaceIfNotInBraces(format, "mm", function () {
-				return padLeft(2, time.getMinutes());
-			});
+			return padLeft(2, time.getMinutes());
+		});
 		format = replaceIfNotInBraces(format, "m", function () {
-				return time.getMinutes();
-			});
+			return time.getMinutes();
+		});
 		format = replaceIfNotInBraces(format, "sss", function () {
-				return time.getTotalSeconds();
-			});
+			return time.getTotalSeconds();
+		});
 		format = replaceIfNotInBraces(format, "ss", function () {
-				return padLeft(2, time.getSeconds());
-			});
+			return padLeft(2, time.getSeconds());
+		});
 		format = replaceIfNotInBraces(format, "s", function () {
-				return time.getSeconds();
-			});
+			return time.getSeconds();
+		});
 		format = replaceIfNotInBraces(format, "ffff", function () {
-				return time.getTotalMilliseconds();
-			});
+			return time.getTotalMilliseconds();
+		});
 		format = replaceIfNotInBraces(format, "fff", function () {
-				return getFirst(3, padLeft(3, time.getMilliseconds()));
-			});
+			return getFirst(3, padLeft(3, time.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "ff", function () {
-				return getFirst(2, padLeft(2, time.getMilliseconds()));
-			});
+			return getFirst(2, padLeft(2, time.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "f", function () {
-				return time.getMilliseconds();
-			});
+			return time.getMilliseconds();
+		});
 
 		if (time.getTime() < 0) {
 			if (format.indexOf("-") != 0)
@@ -1329,6 +1367,7 @@ require("./Culture.js");
 	};
 	global.parseTime = parseTime;
 	Time.parse = parseTime;
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -1343,10 +1382,12 @@ require("./Culture.js");
 			return "-" + value;
 		return value;
 	}
+
 	function getFirst(n, value) {
 		value = (value + "");
 		return value.substring(0, n);
 	}
+
 	function replaceIfNotInBraces(text, separator, replacamentCallBack) {
 
 		var newText = "";

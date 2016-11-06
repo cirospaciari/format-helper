@@ -60,11 +60,13 @@ require("./Culture.js");
 			return this;
 		};
 		this.setMinutes = function (minutes) {
-			milliseconds = milliseconds - (this.getMinutes() * MINUTE) + (minutes * MINUTE);
+			milliseconds = milliseconds - (this.getMinutes() * MINUTE) + (minutes *
+				MINUTE);
 			return this;
 		};
 		this.setSeconds = function (seconds) {
-			milliseconds = milliseconds - (this.getSeconds() * MINUTE) + (seconds * SECOND);
+			milliseconds = milliseconds - (this.getSeconds() * MINUTE) + (seconds *
+				SECOND);
 			return this;
 		};
 		this.setMilliseconds = function (ms) {
@@ -89,13 +91,16 @@ require("./Culture.js");
 			return parseInt(milliseconds / HOUR);
 		};
 		this.getMinutes = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR)) / MINUTE);
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR)) /
+				MINUTE);
 		};
 		this.getSeconds = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) - (this.getMinutes() * MINUTE)) / SECOND);
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) -
+				(this.getMinutes() * MINUTE)) / SECOND);
 		};
 		this.getMilliseconds = function () {
-			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) - (this.getMinutes() * MINUTE) - (this.getSeconds() * SECOND)));
+			return parseInt((Math.abs(milliseconds) - Math.abs(this.getHours() * HOUR) -
+				(this.getMinutes() * MINUTE) - (this.getSeconds() * SECOND)));
 		};
 		this.getTime = function () {
 			return this.getTotalMilliseconds();
@@ -109,9 +114,9 @@ require("./Culture.js");
 		};
 
 		this.format = function (format, culture) {
-			return Time.format(this, format, culture);
-		}
-		//constructor
+				return Time.format(this, format, culture);
+			}
+			//constructor
 		if (arguments.length == 1) {
 			if (Number.isSafeInteger(arguments[0]))
 				milliseconds = arguments[0];
@@ -137,10 +142,12 @@ require("./Culture.js");
 	Time.fromDate = function (date) {
 		if (!date || !(date instanceof Date))
 			return;
-		return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date.getMilliseconds());
+		return new Time(date.getHours(), date.getMinutes(), date.getSeconds(), date
+			.getMilliseconds());
 	};
 	Time.fromDateDiff = function (dateA, dateB) {
-		return new Time((dateA ? dateA.getTime() : 0) - (dateB ? dateB.getTime() : 0));
+		return new Time((dateA ? dateA.getTime() : 0) - (dateB ? dateB.getTime() :
+			0));
 	};
 	Time.compare = function (timeA, timeB) {
 		return timeA.compare(timeB);
@@ -169,44 +176,44 @@ require("./Culture.js");
 		}
 
 		format = replaceIfNotInBraces(format, "hhh", function () {
-				return time.getTotalHours();
-			});
+			return time.getTotalHours();
+		});
 		format = replaceIfNotInBraces(format, "hh", function () {
-				return padLeft(2, time.getHours());
-			});
+			return padLeft(2, time.getHours());
+		});
 		format = replaceIfNotInBraces(format, "h", function () {
-				return time.getHours();
-			});
+			return time.getHours();
+		});
 		format = replaceIfNotInBraces(format, "mmm", function () {
-				return time.getTotalMinutes();
-			});
+			return time.getTotalMinutes();
+		});
 		format = replaceIfNotInBraces(format, "mm", function () {
-				return padLeft(2, time.getMinutes());
-			});
+			return padLeft(2, time.getMinutes());
+		});
 		format = replaceIfNotInBraces(format, "m", function () {
-				return time.getMinutes();
-			});
+			return time.getMinutes();
+		});
 		format = replaceIfNotInBraces(format, "sss", function () {
-				return time.getTotalSeconds();
-			});
+			return time.getTotalSeconds();
+		});
 		format = replaceIfNotInBraces(format, "ss", function () {
-				return padLeft(2, time.getSeconds());
-			});
+			return padLeft(2, time.getSeconds());
+		});
 		format = replaceIfNotInBraces(format, "s", function () {
-				return time.getSeconds();
-			});
+			return time.getSeconds();
+		});
 		format = replaceIfNotInBraces(format, "ffff", function () {
-				return time.getTotalMilliseconds();
-			});
+			return time.getTotalMilliseconds();
+		});
 		format = replaceIfNotInBraces(format, "fff", function () {
-				return getFirst(3, padLeft(3, time.getMilliseconds()));
-			});
+			return getFirst(3, padLeft(3, time.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "ff", function () {
-				return getFirst(2, padLeft(2, time.getMilliseconds()));
-			});
+			return getFirst(2, padLeft(2, time.getMilliseconds()));
+		});
 		format = replaceIfNotInBraces(format, "f", function () {
-				return time.getMilliseconds();
-			});
+			return time.getMilliseconds();
+		});
 
 		if (time.getTime() < 0) {
 			if (format.indexOf("-") != 0)
@@ -300,6 +307,7 @@ require("./Culture.js");
 	};
 	global.parseTime = parseTime;
 	Time.parse = parseTime;
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -314,10 +322,12 @@ require("./Culture.js");
 			return "-" + value;
 		return value;
 	}
+
 	function getFirst(n, value) {
 		value = (value + "");
 		return value.substring(0, n);
 	}
+
 	function replaceIfNotInBraces(text, separator, replacamentCallBack) {
 
 		var newText = "";

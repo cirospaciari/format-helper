@@ -35,7 +35,8 @@ require("./Culture.js");
 				decimalPlaces = "";
 			}
 
-			var symbolLength = culture.currencySymbol.length + (culture.currencySymbolWithSpace ? 1 : 0);
+			var symbolLength = culture.currencySymbol.length + (culture.currencySymbolWithSpace ?
+				1 : 0);
 			var symbol = "";
 			if (culture.currencySymbolPosition == "after") {
 				symbol = numberTxt.substring(numberTxt.length - culture.currencySymbol.length);
@@ -161,7 +162,8 @@ require("./Culture.js");
 
 			if (culture.currencySymbolPosition == "after")
 				return money + (culture.currencySymbolWithSpace ? " " : "") + culture.currencySymbol;
-			return culture.currencySymbol + (culture.currencySymbolWithSpace ? " " : "") + money;
+			return culture.currencySymbol + (culture.currencySymbolWithSpace ? " " :
+				"") + money;
 		}
 		if (upperCaseFormat.indexOf("F") == 0) {
 			var decimalPlaces = parseInt(format.substring(1));
@@ -216,7 +218,8 @@ require("./Culture.js");
 			if (isNaN(decimalPlaces)) {
 				decimalPlaces = 2;
 			}
-			return Number.format(n * 100, "F" + decimalPlaces, culture) + (culture.percentageSymbolWithSpace ? " %" : "%");
+			return Number.format(n * 100, "F" + decimalPlaces, culture) + (culture.percentageSymbolWithSpace ?
+				" %" : "%");
 		}
 
 		if (format.match(/[^0., ]/)) {
@@ -248,39 +251,45 @@ require("./Culture.js");
 			var end = (parts[1] || "");
 			var init = (parts[0] || "");
 			var decimalParts = n.toFixed(end.length).split(".")[1];
-			return padLeft(init.length, numberIntPart) + (decimalParts ? (decimalSeparator + decimalParts) : "");
+			return padLeft(init.length, numberIntPart) + (decimalParts ? (
+				decimalSeparator + decimalParts) : "");
 		}
 
 		var decimalPartsSize = (format.split(decimalSeparator)[1] || "").length;
-		var thousandsPartSize = (format.split(decimalSeparator)[0].split(thousandsSeparator)[1] || "").length;
+		var thousandsPartSize = (format.split(decimalSeparator)[0].split(
+			thousandsSeparator)[1] || "").length;
 
 		var formatComplex = function (n, c, d, t, tc) {
 			c = isNaN(c = Math.abs(c)) ? 2 : c,
-			d = d == undefined ? "." : d,
-			t = t == undefined ? "," : t,
-			s = n < 0 ? "-" : "",
-			i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-			j = (j = i.length) > tc ? j % tc : 0;
-			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(new RegExp("(\\d{" + tc + "})(?=\\d)", "g"), "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+				d = d == undefined ? "." : d,
+				t = t == undefined ? "," : t,
+				s = n < 0 ? "-" : "",
+				i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+				j = (j = i.length) > tc ? j % tc : 0;
+			return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(new RegExp(
+				"(\\d{" + tc + "})(?=\\d)", "g"), "$1" + t) + (c ? d + Math.abs(n - i).toFixed(
+				c).slice(2) : "");
 		};
-		return formatComplex(n, decimalPartsSize, decimalSeparator, thousandsSeparator, thousandsPartSize);
+		return formatComplex(n, decimalPartsSize, decimalSeparator,
+			thousandsSeparator, thousandsPartSize);
 	};
 
 	Number.isInteger = Number.isInteger || function (value) {
 		return typeof value === "number" &&
-		isFinite(value) &&
-		Math.floor(value) === value;
+			isFinite(value) &&
+			Math.floor(value) === value;
 	};
 	Number.isSafeInteger = Number.isSafeInteger || function (value) {
 		return Number.isInteger(value) && Math.abs(value) <= Number.MAX_SAFE_INTEGER;
 	};
 
 	Object.defineProperty(Number.prototype, 'format', {
-		enumerable : false,
-		value : function format(format, culture) {
+		enumerable: false,
+		value: function format(format, culture) {
 			return Number.format(this, format, culture);
 		}
 	});
+
 	function padLeft(n, value) {
 		var negative = false;
 		if (value < 0) {
@@ -295,6 +304,7 @@ require("./Culture.js");
 			return "-" + value;
 		return value;
 	}
+
 	function replaceIfNotInBraces(text, separator, replacamentCallBack) {
 
 		var newText = "";
