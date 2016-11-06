@@ -315,11 +315,24 @@ require("./Time.format.js");
 	Date.now = function () {
 		return new Date();
 	}
-
 	Object.defineProperty(Date.prototype, 'format', {
 		enumerable: false,
 		value: function format(format, culture) {
 			return Date.format(this, format, culture);
+		}
+	});
+	Object.defineProperty(Date.prototype, 'date', {
+		enumerable: false,
+		value: function date(format, culture) {
+			var dateOnly = new Date(this.getTime());
+			dateOnly.setHours(0, 0, 0, 0);
+			return dateOnly;
+		}
+	});
+	Object.defineProperty(Date.prototype, 'time', {
+		enumerable: false,
+		value: function date(format, culture) {
+			return Time.fromDate(this);
 		}
 	});
 

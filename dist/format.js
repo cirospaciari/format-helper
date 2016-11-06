@@ -611,11 +611,24 @@ require("./Time.format.js");
 	Date.now = function () {
 		return new Date();
 	}
-
 	Object.defineProperty(Date.prototype, 'format', {
 		enumerable: false,
 		value: function format(format, culture) {
 			return Date.format(this, format, culture);
+		}
+	});
+	Object.defineProperty(Date.prototype, 'date', {
+		enumerable: false,
+		value: function date(format, culture) {
+			var dateOnly = new Date(this.getTime());
+			dateOnly.setHours(0, 0, 0, 0);
+			return dateOnly;
+		}
+	});
+	Object.defineProperty(Date.prototype, 'time', {
+		enumerable: false,
+		value: function date(format, culture) {
+			return Time.fromDate(this);
 		}
 	});
 
@@ -1115,18 +1128,36 @@ require("./Culture.js");
 			this.addMilliseconds(-ms);
 			return this;
 		};
-		this.setHours = function (hours) {
+		this.setHours = function (hours, minutes, seconds, ms) {
 			milliseconds = milliseconds - (this.getHours() * HOUR) + (hours * HOUR);
+			if (arguments.length > 1) {
+				this.setMinutes(minutes);
+				if (arguments.length > 2) {
+					this.setSeconds(seconds);
+					if (arguments.length > 3) {
+						this.setMilliseconds(ms);
+					}
+				}
+			}
 			return this;
 		};
-		this.setMinutes = function (minutes) {
+		this.setMinutes = function (minutes, seconds, ms) {
 			milliseconds = milliseconds - (this.getMinutes() * MINUTE) + (minutes *
 				MINUTE);
+			if (arguments.length > 1) {
+				this.setSeconds(seconds);
+				if (arguments.length > 2) {
+					this.setMilliseconds(ms);
+				}
+			}
 			return this;
 		};
-		this.setSeconds = function (seconds) {
+		this.setSeconds = function (seconds, ms) {
 			milliseconds = milliseconds - (this.getSeconds() * MINUTE) + (seconds *
 				SECOND);
+			if (arguments.length > 1) {
+				this.setMilliseconds(ms);
+			}
 			return this;
 		};
 		this.setMilliseconds = function (ms) {
@@ -1172,7 +1203,9 @@ require("./Culture.js");
 		this.compare = function (timeB) {
 			return this.getTotalMilliseconds() - timeB.getTotalMilliseconds();
 		};
-
+		this.date = function () {
+			return new Date(milliseconds);
+		}
 		this.format = function (format, culture) {
 				return Time.format(this, format, culture);
 			}
@@ -1196,8 +1229,11 @@ require("./Culture.js");
 			this.addMilliseconds(arguments[3] || 0);
 		}
 	}
+	Time.toDate = function (time) {
+		return time.date();
+	};
 	Time.now = function () {
-		return new Time.fromDate(new Date());
+		return new Date().time();
 	};
 	Time.fromDate = function (date) {
 		if (!date || !(date instanceof Date))
@@ -1418,3 +1454,7 @@ require("./Culture.js");
 })(typeof GLOBAL != "undefined" ? GLOBAL : window);
 
 },{"./Culture.js":2}]},{},[1]);
+
+C:\Repos\format-helper>call build/minify 
+
+C:\Repos\format-helper>browserify main.js -o   | uglifyjs  1>dist/format.min.js 

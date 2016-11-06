@@ -80,4 +80,9 @@ console.log(parseNumber("05", "00"));
 console.log("{0} custa {1:C} em {2:date} às {2:stime}".format("Camiseta",
   number, date));
 console.log(String.format("{0} custa {1:C} em {2:date} às {2:stime}", [
-  "Camiseta", number, date], "en-US"));
+  "Camiseta", number, date
+], "en-US"));
+
+console.log(Date.now().time() + "");
+console.log(Date.now().date() + "");
+console.log(Time.now().date() + "");
