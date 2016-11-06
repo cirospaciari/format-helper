@@ -1,2 +1,3 @@
-call build/normal
-call build/minify
+call build/minify.bat
+cls
+call build/normal.bat

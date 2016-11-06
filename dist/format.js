@@ -1454,7 +1454,3 @@ require("./Culture.js");
 })(typeof GLOBAL != "undefined" ? GLOBAL : window);
 
 },{"./Culture.js":2}]},{},[1]);
-
-C:\Repos\format-helper>call build/minify 
-
-C:\Repos\format-helper>browserify main.js -o   | uglifyjs  1>dist/format.min.js 
