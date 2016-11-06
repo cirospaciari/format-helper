@@ -1,4 +1,4 @@
-require('../format.js');
+require('../main.js');
 //no need set if you use the first culture added in CulturePack
 Culture.set("pt-BR");
 
