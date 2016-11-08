@@ -323,7 +323,7 @@ require("./Time.format.js");
 	});
 	Object.defineProperty(Date.prototype, 'date', {
 		enumerable: false,
-		value: function date(format, culture) {
+		value: function date() {
 			var dateOnly = new Date(this.getTime());
 			dateOnly.setHours(0, 0, 0, 0);
 			return dateOnly;
@@ -331,8 +331,14 @@ require("./Time.format.js");
 	});
 	Object.defineProperty(Date.prototype, 'time', {
 		enumerable: false,
-		value: function date(format, culture) {
+		value: function date() {
 			return Time.fromDate(this);
+		}
+	});
+	Object.defineProperty(Date.prototype, 'compare', {
+		enumerable: false,
+		value: function compare(dateB) {
+			return this.getTime() - dateB.getTime();
 		}
 	});
 
