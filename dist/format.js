@@ -722,7 +722,7 @@ require("./Culture.js");
 			if (decimalPlaces > 0) {
 				format += decimalSeparator + padLeft(decimalPlaces, "");
 			}
-			return Number.parse(numberTxt, format, culture);
+			return Number.parse((numberTxt || "").trim(), format, culture);
 		}
 		if (upperCaseFormat.indexOf("C") == 0) {
 			var decimalPlaces = parseInt(format.substring(1));
@@ -730,15 +730,14 @@ require("./Culture.js");
 				decimalPlaces = "";
 			}
 
-			var symbolLength = culture.currencySymbol.length + (culture.currencySymbolWithSpace ?
-				1 : 0);
+			var symbolLength = culture.currencySymbol.length;
 			var symbol = "";
 			if (culture.currencySymbolPosition == "after") {
 				symbol = numberTxt.substring(numberTxt.length - culture.currencySymbol.length);
-				numberTxt = numberTxt.substring(0, numberTxt.length - symbolLength);
+				numberTxt = numberTxt.substring(0, numberTxt.length - symbolLength).trim();
 			} else {
 				symbol = numberTxt.substring(0, culture.currencySymbol.length);
-				numberTxt = numberTxt.substring(symbolLength);
+				numberTxt = numberTxt.substring(symbolLength).trim();
 			}
 
 			if (symbol != culture.currencySymbol)
