@@ -394,4 +394,4 @@ require("./Time.format.js");
 
 		return newText;
 	}
-})(typeof GLOBAL != "undefined" ? GLOBAL : window);
+})(typeof global != "undefined" ? global : window);

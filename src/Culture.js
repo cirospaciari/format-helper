@@ -29,4 +29,4 @@
 	};
 
 	global.Culture = Culture;
-})(typeof GLOBAL != "undefined" ? GLOBAL : window);
+})(typeof global != "undefined" ? global : window);

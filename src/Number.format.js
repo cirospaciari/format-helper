@@ -334,4 +334,4 @@ require("./Culture.js");
 
 	global.parseNumber = Number.parse;
 
-})(typeof GLOBAL != "undefined" ? GLOBAL : window);
+})(typeof global != "undefined" ? global : window);

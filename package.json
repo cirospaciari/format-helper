@@ -1,0 +1,21 @@
+{
+  "author": {
+    "name": "Ciro César Martins Spaciari Jr"
+  },
+  "contributors": [
+    {
+      "name": "Ciro César Martins Spaciari Jr",
+      "email": "ciro.spaciari@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "name": "format-helper",
+  "version": "0.9.0",
+  "keywords": ["currency", "date","time","datetime","formater", "format", "string", "formater", "parse", "multi","language", "culture", "internationalization", "international", "timespan"],
+  "description": "Multi language helper for formatting data, time, values, currencies and timespan.",
+  "main" : "./main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/cirospaciari/format-helper"
+  }
+}
