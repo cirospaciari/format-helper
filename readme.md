@@ -1,3 +1,17 @@
+[![npm package](https://nodei.co/npm/format-helper.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/format-helper/)
+
+[![NPM version](https://img.shields.io/npm/v/format-helper.svg)](https://img.shields.io/npm/v/format-helper.svg)
+[![NPM License](https://img.shields.io/npm/l/format-helper.svg)](https://img.shields.io/npm/l/format-helper.svg)
+[![NPM Downloads](https://img.shields.io/npm/dm/format-helper.svg?maxAge=43200)](https://img.shields.io/npm/dm/format-helper.svg?maxAge=43200)
+
+How install:
+
+npm install format-helper
+
+How use:
+
+```javascript
+         require("format-helper");
 		//no need set if you use the first culture added in CulturePack
 		 Culture.set("pt-BR");
 		 
