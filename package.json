@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "name": "format-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": ["currency", "date","time","datetime","formater", "format", "string", "formater", "parse", "multi","language", "culture", "internationalization", "international", "timespan"],
   "description": "Multi language helper for formatting data, time, values, currencies and timespan.",
   "main" : "./main.js",
