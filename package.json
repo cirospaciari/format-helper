@@ -10,12 +10,32 @@
   ],
   "license": "MIT",
   "name": "format-helper",
-  "version": "1.0.3",
-  "keywords": ["currency", "date","time","datetime","formater", "format", "string", "formater", "parse", "multi","language", "culture", "internationalization", "international", "timespan"],
+  "version": "1.0.4",
+  "keywords": [
+    "currency",
+    "date",
+    "time",
+    "datetime",
+    "formater",
+    "format",
+    "string",
+    "formater",
+    "parse",
+    "multi",
+    "language",
+    "culture",
+    "internationalization",
+    "international",
+    "timespan"
+  ],
   "description": "Multi language helper for formatting data, time, values, currencies and timespan.",
-  "main" : "./main.js",
+  "main": "./main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/cirospaciari/format-helper.git"
+  },
+  "dependencies": {
+    "browserify": "^16.1.0",
+    "uglifyjs": "^2.4.11"
   }
 }
