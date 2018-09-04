@@ -15,7 +15,7 @@ How use:
  //no need set if you use the first culture added in CulturePack
  Culture.set("pt-BR");
  
- var date = Date.now();              
+ var date = new Date();              
  var time = Time.now();
  var number = 12345.543;
  var smallNumber = 0.2456

@@ -312,9 +312,6 @@ require("./Time.format.js");
 	Date.isValid = function isValid(dateTxt, format, culture) {
 		return parseDate(dateTxt, format, culture) != null;
 	};
-	Date.now = function () {
-		return new Date();
-	}
 	Object.defineProperty(Date.prototype, 'format', {
 		enumerable: false,
 		value: function format(format, culture) {
