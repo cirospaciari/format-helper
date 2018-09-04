@@ -1079,6 +1079,7 @@ Object.defineProperty(String.prototype, 'format', {
 });
 
 },{"./Culture.js":2,"./Date.format.js":4,"./Number.format.js":5,"./Time.format.js":7}],7:[function(require,module,exports){
+(function (global){
 require("./Culture.js");
 
 (function (global) {
@@ -1459,6 +1460,7 @@ require("./Culture.js");
 
 		return newText;
 	}
-})(typeof GLOBAL != "undefined" ? GLOBAL : window);
+})(typeof global != "undefined" ? global : window);
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./Culture.js":2}]},{},[1]);
