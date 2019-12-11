@@ -4,6 +4,12 @@
 [![NPM License](https://img.shields.io/npm/l/format-helper.svg)](https://img.shields.io/npm/l/format-helper.svg)
 [![NPM Downloads](https://img.shields.io/npm/dm/format-helper.svg?maxAge=43200)](https://img.shields.io/npm/dm/format-helper.svg?maxAge=43200)
 
+Support me for future versions:
+
+[![BMC](https://cdn.buymeacoffee.com/buttons/default-orange.png)](https://www.buymeacoffee.com/i2yBGw7)
+
+[![PAGSEGURO](https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/209x48-doar-assina.gif)](https://pag.ae/7VxyJphKt)
+
 How install:
 
 npm install format-helper
