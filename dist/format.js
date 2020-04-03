@@ -592,16 +592,14 @@ require("./Time.format.js");
 		}
 		if (tt == "PM" && h < 12) {
 			h += 12;
-		} else if (h == 12) {
-			h = 0;
 		}
+		
 		var date = null;
 		if (timeZone != null) {
 			date = new Date(Date.UTC(y, M, d, h, m, s, f) + (timeZone * 3600000));
 		} else {
 			date = new Date(y, M, d, h, m, s, f);
 		}
-
 		if (Date.format(date, format, culture) != dateTxt)
 			return null;
 		return date;
